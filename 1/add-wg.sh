@@ -1,7 +1,4 @@
 #!/bin/bash
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.me/ip);
 echo "Checking VPS"
 clear
@@ -40,7 +37,7 @@ fi
 	fi
 
 	# Adguard DNS by default
-	CLIENT_DNS_1="1.1.1.1"
+	CLIENT_DNS_1="1.1.1.3"
 
 	CLIENT_DNS_2="8.8.8.8"
 	MYIP=$(wget -qO- ifconfig.me/ip);

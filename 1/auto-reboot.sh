@@ -1,9 +1,4 @@
 #!/bin/bash
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
-bl='\e[36;1m'
-bd='\e[1m'
 MYIP=$(wget -qO- ifconfig.co);
 echo "Checking VPS"
 clear
@@ -20,12 +15,12 @@ fi
 echo -e "═════════════════════════════════════════════\e[m" | lolcat
 echo -e "        $bl [System Auto Reboot Menu]          \e[m"
 echo -e "═════════════════════════════════════════════\e[m" | lolcat
-echo -e "$bd 1$bl] \e[m $bdSet Auto-Reboot Setiap 1 Jam"
-echo -e "$bd 2$bl] \e[m $bdSet Auto-Reboot Setiap 6 Jam"
-echo -e "$bd 3$bl] \e[m $bdSet Auto-Reboot Setiap 12 Jam"
-echo -e "$bd 4$bl] \e[m $bdSet Auto-Reboot Setiap 1 Hari"
-echo -e "$bd 5$bl] \e[m $bdSet Auto-Reboot Setiap 1 Minggu"
-echo -e "$bd 6$bl] \e[m $bdSet Auto-Reboot Setiap 1 Bulan"
+echo -e "$bd 1$bl] \e[m $bdSet Auto-Reboot Setiap 1 hour"
+echo -e "$bd 2$bl] \e[m $bdSet Auto-Reboot Setiap 6 hour"
+echo -e "$bd 3$bl] \e[m $bdSet Auto-Reboot Setiap 12 hour"
+echo -e "$bd 4$bl] \e[m $bdSet Auto-Reboot Setiap 1 day"
+echo -e "$bd 5$bl] \e[m $bdSet Auto-Reboot Setiap 1 week"
+echo -e "$bd 6$bl] \e[m $bdSet Auto-Reboot Setiap 1 month"
 echo -e "$bd 7$bl] \e[m $bdMatikan Auto-Reboot"
 echo -e "$bd 8$bl] \e[m $bdView reboot log"
 echo -e "$bd 9$bl] \e[m $bdRemove reboot log"

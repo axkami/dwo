@@ -1,7 +1,4 @@
 #!/bin/bash
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.me/ip);
 echo "Checking VPS"
 clear
@@ -20,7 +17,7 @@ echo -e "======================================" | lolcat
 echo -e ""
 echo -e "     Status Autokill : $sts        "
 echo -e ""
-echo -e "     [1]  AutoKill After 5 Minutes"
+echo -e "     [1]  AutoKill After 1 Minutes"
 echo -e "     [2]  AutoKill After 10 Minutes"
 echo -e "     [3]  AutoKill After 15 Minutes"
 echo -e "     [4]  Turn Off AutoKill/MultiLogin"
@@ -43,7 +40,7 @@ case $AutoKill in
                 echo -e "======================================" | lolcat
                 echo -e ""
                 echo -e "      Allowed MultiLogin : $max"
-                echo -e "      AutoKill Every     : 5 Minutes"      
+                echo -e "      AutoKill Every     : 1 Minutes"      
                 echo -e ""
                 echo -e "======================================" | lolcat                                                                                                                                 
                 exit                                                                  

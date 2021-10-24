@@ -1,7 +1,4 @@
 #!/bin/bash
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.me/ip);
 echo "Checking VPS"
 clear
@@ -10,8 +7,8 @@ DOMAIN=$domain
 CF_ID=$email
 CF_KEY=$key
 set -euo pipefail
-read -p "Masukan Subdomain Anda :" sub
-read -p "Masukan Ip BUG :" IP
+read -p "Enter your subdomain :" sub
+read -p "Enter IP Bug :" IP
 echo "Updating DNS for ${sub}..."
 ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
      -H "X-Auth-Email: ${CF_ID}" \

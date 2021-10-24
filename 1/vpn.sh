@@ -1,7 +1,6 @@
 #!/bin/bash
-# Script by brody
+# Script by K2
 # ==================================================
-
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
@@ -61,20 +60,14 @@ dev tun
 setenv FRIENDLY_NAME "Dia Ping"
 proto udp
 remote xxxxxxxxx 2200
-resolv-retry infinite
-route-method exe
-nobind
-persist-key
-persist-tun
+float
+dhcp-option DNS 185.231.182.126
+mssfix 1300
+tun-mtu 1350
+key-direction 1
 auth-user-pass
 comp-lzo
-float
-fast-io
-nobind
-mssfix 560
-sndbuf 393216
-rcvbuf 393216
-verb 3
+push-peer-info
 END
 
 sed -i $MYIP2 /etc/openvpn/client-udp-2200.ovpn;

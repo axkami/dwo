@@ -1,13 +1,4 @@
 #!/bin/bash
-yl='\e[32;1m'
-bl='\e[36;1m'
-gl='\e[32;1m'
-rd='\e[31;1m'
-mg='\e[0;95m'
-blu='\e[34m'
-op='\e[35m'
-or='\033[1;33m'
-bd='\e[1m'
 MYIP=$(wget -qO- ifconfig.co);
 echo "Checking VPS"
 clear 
@@ -31,22 +22,11 @@ IPVPS=$(curl -s ipinfo.io/ip )
 	echo -e " $op ║ \e[032;1mIsp Name:\e[0m$bd $ISP"
         echo -e " $op ║ \e[032;1mIp Vps:\e[0m$bd $IPVPS"
 	echo -e " $op ║ \e[032;1mCity:\e[0m$bd $CITY"
-	echo -e " $op ║ \e[032;1mTime:\e[0m$bd $WKT                                        ╥"
-echo -e  "  ╠════════════════════════════════════════════════════════════╣" | lolcat
-echo -e  "  ║                       ┃ MENU OPTIONS ┃                      ║ \e[m" |lolcat
-echo -e  "  ╠════════════════════════════════════════════════════════════╣" | lolcat
-echo -e  " \e[32;1m ║\e[m$bd 1$bl]\e[m$bd SSH & OpenVPN Menu                                      ╨"
+	echo -e " $op ║ \e[032;1mTime:\e[0m$bd $WKT"
+echo -e  " \e[32;1m ║\e[m$bd 1$bl]\e[m$bd SSH & OpenVPN Menu "
 echo -e  " $gl ║\e[m$bd 2$bl]\e[m$bd Panel Wireguard "
 echo -e  " $gl ║\e[m$bd 3$bl]\e[m$bd "
 echo -e  " $gl ║\e[m$bd 4$bl]\e[m$bd "
-echo -e  " $bl ║\e[m$bd 5$bl]\e[m$bd "
-echo -e  " $bl ║\e[m$bd 6$bl]\e[m$bd "
-echo -e  " $bl ║\e[m$bd 7$bl]\e[m$bd "
-echo -e  " $bl ║\e[m$bd 8$bl]\e[m$bd "
-echo -e  " $bl ║\e[m$bd 9$bl]\e[m$bd                                          ╥"
-echo -e   "  \e[1;32m╠════════════════════════════════════════════════════════════╣\e[m" | lolcat
-echo -e   "  ║                       ┃ SYSTEM MENU ┃                       ║\e[m" | lolcat 
-echo -e   "  \e[1;32m╠════════════════════════════════════════════════════════════╣\e[m" | lolcat
 echo -e   " $mg ║\e[m$bd 10$bl]\e[m$bd Panel Domain"
 echo -e   " $mg ║\e[m$bd 11$bl]\e[m$bd Change Port All Account"
 echo -e   " $mg ║\e[m$bd 12$bl]\e[m$bd Autobackup Data VPS"
@@ -68,9 +48,6 @@ echo -e   " $bl ║\e[m$bd 27$bl]\e[m$bd Change Banner"
 echo -e   " $bl ║\e[m$bd 28$bl]\e[m$bd Cek Bandwith"
 echo -e   " $bl ║\e[m$bd 29$bl]\e[m$bd Reset Server"
 echo -e   " $bl ║\e[m$bd 30$bl]\e[m$bd Update To Last Version                                 ╥"
-echo -e   "  \e[1;32m╠════════════════════════════════════════════════════════════╣\e[m" | lolcat
-echo -e   "  ║ x)   Exit                                                  ║\e[m" | lolcat
-echo -e   "  \e[1;32m╚════════════════════════════════════════════════════════════╝\e[m" | lolcat
 echo -e   ""
 read -p "     Select From Options [1-31 or x] :  " menu
 echo -e   ""

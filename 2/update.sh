@@ -71,11 +71,7 @@ chmod +x l2tp
 chmod +x ssh
 chmod +x ssssr
 chmod +x sstpp
-chmod +x trojaan
-chmod +x trojanGO
-chmod +x v2raay
 chmod +x wgr
-chmod +x vleess
 chmod +x bbr
 chmod +x bannerku
 chmod +x add-host
@@ -103,7 +99,6 @@ chmod +x port-sstp
 chmod +x port-tr
 chmod +x port-squid
 chmod +x port-ws
-chmod +x port-vless
 chmod +x wbmn
 chmod +x xp
 chmod +x swap

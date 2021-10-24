@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script by : SSH SEDANG NETWORK
+# Script by : K2
 #!/bin/bash
 clear
 MAX=1

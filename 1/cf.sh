@@ -1,12 +1,9 @@
 #!/bin/bash
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.co);
 echo "Checking VPS"
 clear
 apt install jq curl -y
-DOMAIN=premium-server.xyz
+DOMAIN=diaping.xyz
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
 SUB_DOMAIN=${sub}.premium-server.xyz
 CF_ID=afdhan134@gmail.com

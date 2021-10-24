@@ -81,65 +81,65 @@ clear
 
 # Status Service OpenVPN
 if [[ $oovpn == "active" ]]; then
-  status_openvpn="${GREEN}OpenVPN Service Is Running ${NC}( Aktif )"
+  status_openvpn="${GREEN}OpenVPN Service Is Running ${NC}( Active )"
 else
-  status_openvpn="${RED}OpenVPN Service Is Not Running ${NC}( Not Aktif )"
+  status_openvpn="${RED}OpenVPN Service Is Not Running ${NC}( Not Active )"
 fi
 
 # Status Service  SSH 
 if [[ $ssh_service == "running" ]]; then 
-   status_ssh="${GREEN}SSH/Tunnel Service Is Running ${NC}( Aktif )"
+   status_ssh="${GREEN}SSH/Tunnel Service Is Running ${NC}( Active )"
 else
-   status_ssh="${RED}SSH/Tunnel Service Is Not Running ${NC}( Not Aktif )"
+   status_ssh="${RED}SSH/Tunnel Service Is Not Running ${NC}( Not Active )"
 fi
 
 # Status Service  Squid 
 if [[ $squid_service == "running" ]]; then 
-   status_squid="${GREEN}Squid Service Is Running ${NC}( Aktif )"
+   status_squid="${GREEN}Squid Service Is Running ${NC}( Active )"
 else
-   status_squid="${RED}Squid Service Is Not Running ${NC}( Not Aktif )"
+   status_squid="${RED}Squid Service Is Not Running ${NC}( Not Active )"
 fi
 
 # Status Service  VNSTAT 
 if [[ $vnstat_service == "running" ]]; then 
-   status_vnstat="${GREEN}Vnstat Service Is Running ${NC}( Aktif )"
+   status_vnstat="${GREEN}Vnstat Service Is Running ${NC}( Active )"
 else
-   status_vnstat="${RED}Vnstat Service Is Not Running ${NC}( Not Aktif )"
+   status_vnstat="${RED}Vnstat Service Is Not Running ${NC}( Not Active )"
 fi
 
 # Status Service  Crons 
 if [[ $cron_service == "running" ]]; then 
-   status_cron="${GREEN}Crons Service Is Running ${NC}( Aktif )"
+   status_cron="${GREEN}Crons Service Is Running ${NC}( Active )"
 else
-   status_cron="${RED}Crons Service Is Not Running ${NC}( Not Aktif )"
+   status_cron="${RED}Crons Service Is Not Running ${NC}( Not Active )"
 fi
 
 # Status Service  Fail2ban 
 if [[ $fail2ban_service == "running" ]]; then 
-   status_fail2ban="${GREEN}Fail2Ban Service Is Running ${NC}( Aktif )"
+   status_fail2ban="${GREEN}Fail2Ban Service Is Running ${NC}( Active )"
 else
-   status_fail2ban="${RED}Fail2Ban Service Is Not Running ${NC}( Not Aktif )"
+   status_fail2ban="${RED}Fail2Ban Service Is Not Running ${NC}( Not Active )"
 fi
 
 # Status Service Wireguard
 if [[ $swg == "active" ]]; then
-  status_wg="${GREEN}Wireguard Service Is Running ${NC}( Aktif )${NC}"
+  status_wg="${GREEN}Wireguard Service Is Running ${NC}( Active )${NC}"
 else
-  status_wg="${RED}Wireguard Service Is Not Running ${NC}( Not Aktif )${NC}"
+  status_wg="${RED}Wireguard Service Is Not Running ${NC}( Not Active )${NC}"
 fi
 
 # Status Service Dropbear
 if [[ $dropbear_status == "running" ]]; then 
-   status_beruangjatuh="${GREEN}Dropbear Service Is Running${NC} ( Aktif )${NC}"
+   status_beruangjatuh="${GREEN}Dropbear Service Is Running${NC} ( Active )${NC}"
 else
-   status_beruangjatuh="${RED}Dropbear Service Is Not Running ${NC}( Not Aktif )${NC}"
+   status_beruangjatuh="${RED}Dropbear Service Is Not Running ${NC}( Not Active )${NC}"
 fi
 
 # Status Service Stunnel
 if [[ $stunnel_service == "running" ]]; then 
-   status_stunnel="${GREEN}Stunnel Service Is Running ${NC}( Aktif )"
+   status_stunnel="${GREEN}Stunnel Service Is Running ${NC}( Active )"
 else
-   status_stunnel="${RED}Stunnel Service Is Not Running ${NC}( Not Aktif )}"
+   status_stunnel="${RED}Stunnel Service Is Not Running ${NC}( Not Active )}"
 fi
 
 # Ram Usage
