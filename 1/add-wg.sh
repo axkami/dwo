@@ -1,5 +1,4 @@
 #!/bin/bash
-MYIP=$(wget -qO- ifconfig.me/ip);
 echo "Checking VPS"
 clear
 # Load params
@@ -41,8 +40,8 @@ fi
 
 	CLIENT_DNS_2="8.8.8.8"
 	MYIP=$(wget -qO- ifconfig.me/ip);
-	read -p "Expired (days): " masaaktif
-	exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+	read -p "Expired (days): " active period
+	exp=`date -d "$active period days" +"%Y-%m-%d"`
 
 	# Generate key pair for the client
 	CLIENT_PRIV_KEY=$(wg genkey)

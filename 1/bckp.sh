@@ -12,6 +12,8 @@ echo Start Backup
 clear
 cp /etc/passwd backup/
 cp /etc/group backup/
+cp /etc/shadow backup/
+cp /etc/gshadow backup/
 cp -r /etc/wireguard backup/wireguard
 cp /etc/ppp/chap-secrets backup/chap-secrets
 cp -r /var/lib/premium-script/ backup/premium-script

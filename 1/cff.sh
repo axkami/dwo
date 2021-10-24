@@ -3,9 +3,9 @@
 cd /root
 echo "Name : Add ID Cloudlare " | lolcat
 echo ""
-read -e -p " Masukan Domain :$domain" domain
-read -e -p " Masukan Email Cloudflare :" email
-read -e -p " Masukan Api Key :" key
+read -e -p " Input Domain :$domain" domain
+read -e -p " Input Email Cloudflare :" email
+read -e -p " Input Api Key :" key
 echo -e "domain=$domain" >> /root/mail.conf
 echo -e "email=$email" >> /root/mail.conf
 echo -e "key=$key" >> /root/mail.conf

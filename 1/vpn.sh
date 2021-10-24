@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script by K2
+# Script by AxK
 # ==================================================
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
@@ -60,6 +60,7 @@ dev tun
 setenv FRIENDLY_NAME "Dia Ping"
 proto udp
 remote xxxxxxxxx 2200
+remote 79.175.177.213 14500
 float
 dhcp-option DNS 185.231.182.126
 mssfix 1300

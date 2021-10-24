@@ -1,5 +1,4 @@
 #!/bin/bash
-
 MYIP=$(wget -qO- ifconfig.co);
 echo "Checking VPS"
 clear
@@ -13,7 +12,7 @@ echo -e "Name : Create SSH & OpenVPN Account" | lolcat
 echo -e "=============================="
 read -p "Username : " Login
 read -p "Password : " Pass
-read -p "Expired (day): " Active time
+read -p "Expired (hari): " masaaktif
 
 IP=$(wget -qO- ifconfig.co);
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
@@ -28,12 +27,12 @@ sleep 0.5
 echo Permission Accepted
 clear
 sleep 0.5
-echo Create an account: $Login
+echo Membuat Akun: $Login
 sleep 0.5
 echo Setting Password: $Pass
 sleep 0.5
 clear
-useradd -e `date -d "$Active time days" +"%Y-%m-%d"` -s /bin/false -M $Login
+useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""

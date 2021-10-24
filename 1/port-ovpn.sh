@@ -39,24 +39,33 @@ dh dh2048.pem
 plugin /usr/lib/openvpn/openvpn-plugin-auth-pam.so login
 verify-client-cert none
 username-as-common-name
-server 10.6.0.0 255.255.255.0
+server 10.7.0.0 255.255.255.0
 ifconfig-pool-persist ipp.txt
 push "redirect-gateway def1 bypass-dhcp"
-sndbuf 393216
-rcvbuf 393216
-push "sndbuf 500216"
-push "rcvbuf 500216"
+push "redirect-gateway ipv6 def1 bypass-dhcp"
+sndbuf 512000
+rcvbuf 512000
+push "sndbuf 512000"
+push "rcvbuf 512000"
 mssfix 1400
-tun-mtu 1460
-push "dhcp-option DNS 1.1.1.1"
-push "dhcp-option DNS 8.8.8.8"
-keepalive 5 60
-management 127.0.0.1 5555
+tun-mtu 1500
+push "dhcp-option DNS 1.1.1.3"
+push "dhcp-option DNS 1.0.0.3"
+keepalive 5 30
 comp-lzo
+push "route-gateway 185.128.139.1"
+route-gateway 185.128.139.1
+push "route-ipv6 2000::/3"
+push "route-ipv6 fc00::8000:2/112"
+push "route-ipv6 ::/0"
+topology subnet
 persist-key
 persist-tun
-status openvpn-tcp.log
+status /var/log/openvpn/status.log
+management 127.0.0.1 5555
 verb 3
+explicit-exit-notify
+max-routes 200
 END
 cat > /etc/openvpn/client-tcp-$vpn.ovpn <<-END
 client
@@ -121,23 +130,19 @@ push "dhcp-option DNS 1.1.1.3"
 push "dhcp-option DNS 1.0.0.3"
 keepalive 5 30
 comp-lzo
-push "route-gateway 172.31.1.1"
-route-gateway 172.31.1.1
+push "route-gateway 185.128.139.1"
+route-gateway 185.128.139.1
 push "route-ipv6 2000::/3"
 push "route-ipv6 fc00::8000:2/112"
 push "route-ipv6 ::/0"
 topology subnet
 persist-key
 persist-tun
-status openvpn-udp.log
 status /var/log/openvpn/status.log
-/etc/openvpn/server/openvpn-udp.log
-/etc/openvpn/server/openvpn-status.log
 management 127.0.0.1 5555
 verb 3
 explicit-exit-notify
 max-routes 200
-explicit-exit-notify
 END
 cat > /etc/openvpn/client-udp-$vpn.ovpn <<-END
 client

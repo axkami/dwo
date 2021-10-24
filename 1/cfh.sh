@@ -7,8 +7,8 @@ DOMAIN=$domain
 CF_ID=$email
 CF_KEY=$key
 set -euo pipefail
-read -p "Enter your subdomain :" sub
-read -p "Enter IP Bug :" IP
+read -p "Input Subdomain Anda :" sub
+read -p "Input Ip BUG :" IP
 echo "Updating DNS for ${sub}..."
 ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
      -H "X-Auth-Email: ${CF_ID}" \
