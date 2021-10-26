@@ -120,6 +120,8 @@ server 10.7.0.0 255.255.255.0
 ifconfig-pool-persist ipp.txt
 push "redirect-gateway def1 bypass-dhcp"
 push "redirect-gateway ipv6 def1 bypass-dhcp"
+push "route-gateway 10.7.0.1"
+route-gateway 10.7.0.1
 sndbuf 512000
 rcvbuf 512000
 push "sndbuf 512000"
@@ -130,8 +132,50 @@ push "dhcp-option DNS 1.1.1.3"
 push "dhcp-option DNS 1.0.0.3"
 keepalive 5 30
 comp-lzo
-push "route-gateway 185.128.139.1"
-route-gateway 185.128.139.1
+push "max-routes 1000"
+max-routes 1000
+push "route 80.81.195.120"
+push "route 80.81.195.124"
+push "route 80.81.195.126"
+push "route 80.81.195.127"
+push "route 80.81.195.128"
+push "route 80.81.195.130"
+push "route 80.81.195.132"
+push "route 3.64.0.0"
+push "route 3.120.0.0"
+push "route 18.184.0.0"
+push "route 18.156.0.0"
+push "route 18.192.0.0"
+push "route 18.194.0.252"
+push "route 18.196.0.253"
+push "route 52.28.63.252"
+push "route 52.29.63.252"
+push "route 52.57.255.254"
+push "route 52.58.63.252"
+push "route 35.156.63.252"
+push "route 54.93.32.2"
+push "route 54.93.162.162"
+push "route-gateway 80.81.195.120"
+push "route-gateway 80.81.195.124"
+push "route-gateway 80.81.195.126"
+push "route-gateway 80.81.195.127"
+push "route-gateway 80.81.195.128"
+push "route-gateway 80.81.195.130"
+push "route-gateway 80.81.195.132"
+push "route-gateway 3.64.0.0"
+push "route-gateway 3.120.0.0"
+push "route-gateway 18.184.0.0"
+push "route-gateway 18.156.0.0"
+push "route-gateway 18.192.0.0"
+push "route-gateway 18.194.0.252"
+push "route-gateway 18.196.0.253"
+push "route-gateway 52.28.63.252"
+push "route-gateway 52.29.63.252"
+push "route-gateway 52.57.255.254"
+push "route-gateway 52.58.63.252"
+push "route-gateway 35.156.63.252"
+push "route-gateway 54.93.32.2"
+push "route-gateway 54.93.162.162"
 push "route-ipv6 2000::/3"
 push "route-ipv6 fc00::8000:2/112"
 push "route-ipv6 ::/0"
@@ -142,7 +186,6 @@ status /var/log/openvpn/status.log
 management 127.0.0.1 5555
 verb 3
 explicit-exit-notify
-max-routes 200
 END
 cat > /etc/openvpn/client-udp-$vpn.ovpn <<-END
 client
@@ -151,9 +194,8 @@ dev tun
 proto udp
 remote $MYIP $vpn
 float
-dhcp-option DNS 185.231.182.126
 mssfix 1300
-tun-mtu 1350
+tun-mtu 1450
 key-direction 1
 auth-user-pass
 comp-lzo
