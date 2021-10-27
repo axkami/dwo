@@ -121,7 +121,9 @@ ifconfig-pool-persist ipp.txt
 push "redirect-gateway def1 bypass-dhcp"
 push "redirect-gateway ipv6 def1 bypass-dhcp"
 push "route-gateway 10.7.0.1"
-route-gateway 10.7.0.1
+push "route-ipv6 2000::/3"
+push "route-ipv6 fc00::8000:2/112"
+push "route-ipv6 ::/0"
 sndbuf 512000
 rcvbuf 512000
 push "sndbuf 512000"
@@ -147,41 +149,17 @@ push "route 18.184.0.0"
 push "route 18.156.0.0"
 push "route 18.192.0.0"
 push "route 18.194.0.252"
-push "route 18.196.0.253"
-push "route 52.28.63.252"
 push "route 52.29.63.252"
 push "route 52.57.255.254"
 push "route 52.58.63.252"
 push "route 35.156.63.252"
 push "route 54.93.32.2"
 push "route 54.93.162.162"
-push "route-gateway 80.81.195.120"
-push "route-gateway 80.81.195.124"
-push "route-gateway 80.81.195.126"
-push "route-gateway 80.81.195.127"
-push "route-gateway 80.81.195.128"
-push "route-gateway 80.81.195.130"
-push "route-gateway 80.81.195.132"
-push "route-gateway 3.64.0.0"
-push "route-gateway 3.120.0.0"
-push "route-gateway 18.184.0.0"
-push "route-gateway 18.156.0.0"
-push "route-gateway 18.192.0.0"
-push "route-gateway 18.194.0.252"
-push "route-gateway 18.196.0.253"
-push "route-gateway 52.28.63.252"
-push "route-gateway 52.29.63.252"
-push "route-gateway 52.57.255.254"
-push "route-gateway 52.58.63.252"
-push "route-gateway 35.156.63.252"
-push "route-gateway 54.93.32.2"
-push "route-gateway 54.93.162.162"
-push "route-ipv6 2000::/3"
-push "route-ipv6 fc00::8000:2/112"
-push "route-ipv6 ::/0"
 topology subnet
 persist-key
 persist-tun
+block-ipv6
+push "block-ipv6"
 status /var/log/openvpn/status.log
 management 127.0.0.1 5555
 verb 3
