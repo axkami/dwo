@@ -118,48 +118,28 @@ verify-client-cert none
 username-as-common-name
 server 10.7.0.0 255.255.255.0
 ifconfig-pool-persist ipp.txt
-push "redirect-gateway def1 bypass-dhcp"
-push "redirect-gateway ipv6 def1 bypass-dhcp"
-push "route-gateway 10.7.0.1"
-push "route-ipv6 2000::/3"
-push "route-ipv6 fc00::8000:2/112"
-push "route-ipv6 ::/0"
-sndbuf 512000
-rcvbuf 512000
-push "sndbuf 512000"
-push "rcvbuf 512000"
-mssfix 1400
-tun-mtu 1500
+push "redirect-gateway def1"
+push "route 10.7.0.1"
+push "dhcp-option DNS 10.7.0.1"
 push "dhcp-option DNS 1.1.1.3"
-push "dhcp-option DNS 1.0.0.3"
-keepalive 5 30
-comp-lzo
-push "max-routes 1000"
-max-routes 1000
-push "route 80.81.195.120"
-push "route 80.81.195.124"
-push "route 80.81.195.126"
-push "route 80.81.195.127"
-push "route 80.81.195.128"
+push "sndbuf 524288"
+push "rcvbuf 524288"
+push "tun-mtu 1500"
+push "fragment 1300"
+push "mssfix 1200"
 push "route 80.81.195.130"
 push "route 80.81.195.132"
-push "route 3.64.0.0"
-push "route 3.120.0.0"
 push "route 18.184.0.0"
-push "route 18.156.0.0"
-push "route 18.192.0.0"
-push "route 18.194.0.252"
-push "route 52.29.63.252"
-push "route 52.57.255.254"
+push "route 18.196.0.253"
+push "route 52.28.63.252"
+push "route 80.81.195.120"
 push "route 52.58.63.252"
-push "route 35.156.63.252"
-push "route 54.93.32.2"
 push "route 54.93.162.162"
-topology subnet
+keepalive 5 30
+comp-lzo
+topology net30
 persist-key
 persist-tun
-block-ipv6
-push "block-ipv6"
 status /var/log/openvpn/status.log
 management 127.0.0.1 5555
 verb 3
