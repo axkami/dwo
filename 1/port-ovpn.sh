@@ -120,24 +120,19 @@ server 10.7.0.0 255.255.255.0
 ifconfig-pool-persist ipp.txt
 push "redirect-gateway def1"
 push "route 10.7.0.1"
-push "dhcp-option DNS 10.7.0.1"
+push "dhcp-option DNS 8.8.8.8"
 push "dhcp-option DNS 1.1.1.3"
 push "sndbuf 524288"
 push "rcvbuf 524288"
 push "tun-mtu 1500"
 push "fragment 1300"
 push "mssfix 1200"
+push "max-routes 1000"
 push "route 80.81.195.130"
-push "route 80.81.195.132"
-push "route 18.184.0.0"
-push "route 18.196.0.253"
-push "route 52.28.63.252"
-push "route 80.81.195.120"
-push "route 52.58.63.252"
 push "route 54.93.162.162"
 keepalive 5 30
 comp-lzo
-topology net30
+topology subnet
 persist-key
 persist-tun
 status /var/log/openvpn/status.log
@@ -153,7 +148,7 @@ proto udp
 remote $MYIP $vpn
 float
 mssfix 1300
-tun-mtu 1450
+tun-mtu 1400
 key-direction 1
 auth-user-pass
 comp-lzo
